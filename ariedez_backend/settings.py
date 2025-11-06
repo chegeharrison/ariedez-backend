@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
-from pathlib import Path,os
+import os
+from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
 
