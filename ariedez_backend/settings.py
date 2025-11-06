@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -62,6 +62,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -73,6 +74,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React/Next.js development server
+    "https://ariedez-fronten.vercel.app/",  # Production URL
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -145,6 +147,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
