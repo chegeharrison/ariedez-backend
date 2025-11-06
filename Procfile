@@ -1,1 +1,1 @@
-web: gunicorn ariedez_backend.wsgi
+web: gunicorn ariedez_backend.wsgi:application

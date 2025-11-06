@@ -74,7 +74,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React/Next.js development server
-    "https://ariedez-fronten.vercel.app/",  # Production URL
+    "https://ariedez-fronten.vercel.app",  # Production URL
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -150,6 +150,8 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+# WhiteNoise setup for serving static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
